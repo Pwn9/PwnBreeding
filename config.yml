@@ -1,0 +1,69 @@
+# Which worlds should this be enabled in?
+# Unlisted worlds will allow normal spawning.
+enabled_worlds:
+    - example_world
+    - example_world_nether
+
+# Default settings for any world and any biome.
+# All settings will fall back to this if not specifically set in perWorld/perBiome settings
+default:
+	CHICKEN:
+		spawnChance: 50
+	COW:
+		spawnChance: 50
+	HORSE:
+		spawnChance: 50
+	OCELOT:
+		spawnChance: 50
+	PIG:
+		spawnChance: 50
+	SHEEP:
+		spawnChance: 50
+	WOLF:
+		spawnChance: 50
+		
+# Customized world settings, just add world name, enabled:true, layChance and replaceWith for 
+# the specific world. Any enabled_worlds that are NOT in perWorld, will use the default settings. 
+# Any worlds added to perWorld that are NOT in enabled worlds will still be disabled.
+perWorld:
+    example_world:
+    	CHICKEN:
+	        spawnChance: 50  #default for this mob for this world.
+	        perBiome:
+	            PLAINS:
+	                spawnChance: 100
+		COW:
+	        spawnChance: 50  #default for this mob for this world.
+	        perBiome:
+	            PLAINS:
+	                spawnChance: 100			
+		HORSE:
+	        spawnChance: 50  #default for this mob for this world.
+	        perBiome:
+	            PLAINS:
+	                spawnChance: 100
+		OCELOT:
+	        spawnChance: 50  #default for this mob for this world.
+	        perBiome:
+	            PLAINS:
+	                spawnChance: 50
+		PIG:
+	        spawnChance: 50  #default for this mob for this world.
+	        perBiome:
+	            PLAINS:
+	                spawnChance: 100
+		SHEEP:
+	        spawnChance: 50  #default for this mob for this world.
+	        perBiome:
+	            PLAINS:
+	                spawnChance: 100
+		WOLF:
+	        spawnChance: 50  #default for this mob for this world.
+	        perBiome:
+	            PLAINS:
+	                spawnChance: 100              
+       
+# Enable logging (for debugging, generally leave this false unless you are having problems)
+# Note that on production servers with lots of chicken farms this log could get very big!
+debug_log: false
+    
