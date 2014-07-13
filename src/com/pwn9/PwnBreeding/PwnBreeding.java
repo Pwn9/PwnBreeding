@@ -24,6 +24,15 @@ public class PwnBreeding extends JavaPlugin
 	static Random randomNumberGenerator = new Random();
 	public static PluginDescriptionFile pdfFile;
 	
+	// Default chances - do we need this?
+	public static int ChickenChance;
+	public static int CowChance;
+	public static int HorseChance;
+	public static int OcelotChance;
+	public static int PigChance;
+	public static int SheepChance;
+	public static int WolfChance;	
+	
 	@Override
 	public void onEnable() 
 	{
@@ -83,6 +92,15 @@ public class PwnBreeding extends JavaPlugin
 	{
 		PwnBreeding.enabledWorlds = getConfig().getStringList("enabled_worlds");
 		PwnBreeding.logEnabled = getConfig().getBoolean("debug_log");
+		
+		// Load default chances - do we even need this?
+		PwnBreeding.ChickenChance = getConfig().getInt("default.CHICKEN.spawnChance", 50);
+		PwnBreeding.CowChance = getConfig().getInt("default.COW.spawnChance", 50);
+		PwnBreeding.HorseChance = getConfig().getInt("default.HORSE.spawnChance", 50);
+		PwnBreeding.OcelotChance = getConfig().getInt("default.OCELOT.spawnChance", 50);
+		PwnBreeding.PigChance = getConfig().getInt("default.PIG.spawnChance", 50);
+		PwnBreeding.SheepChance = getConfig().getInt("default.SHEEP.spawnChance", 50);
+		PwnBreeding.WolfChance = getConfig().getInt("default.WOLF.spawnChance", 50);
 	}	
 	
 	// Debug logging

@@ -1,6 +1,5 @@
 package com.pwn9.PwnBreeding;
 
-import org.bukkit.Location;
 import org.bukkit.World;
 
 import org.bukkit.event.EventHandler;
@@ -20,19 +19,54 @@ public class CreatureSpawnListener implements Listener
 	}
 
 	// List for the ItemSpawnEvent and then do stuff with it
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(ignoreCancelled = true)
 	public void onSpawn(CreatureSpawnEvent event) 
 	{
 		World eworld = event.getLocation().getWorld();
-		Location eLoc = event.getLocation();
 		
 		// If plugin is not enabled in this world, return
 		if (!PwnBreeding.isEnabledIn(eworld.getName())) return; 
+		
+		// Get the spawn reason, if breeding we'll continue
+		String reason = event.getSpawnReason().toString();
+		
+		// We only care about breeding reason
+		if (!reason.equalsIgnoreCase("BREEDING")) return;
 
+		// Getting the world name
 		String world = eworld.getName();
 		
+		// Getting the biome
+		String biome = event.getLocation().getWorld().getBiome(event.getLocation().getBlockX(), event.getLocation().getBlockZ()).toString();
+		
+		// Getting the entity type
+		String mob = event.getEntityType().toString();
+	
+		// Time to figure out this guys chance setting
+		int spawnChance;
+		
+		if (plugin.getConfig().isSet(world+"."+mob+"."+biome+".spawnChance")) 
+		{
+			spawnChance = plugin.getConfig().getInt(world+"."+mob+"."+biome+".spawnChance");
+		}
+		else if (plugin.getConfig().isSet(world+"."+mob+".spawnChance")) 
+		{
+			spawnChance = plugin.getConfig().getInt(world+"."+mob+".spawnChance");
+		}
+		else 
+		{
+			spawnChance = plugin.getConfig().getInt("default."+mob+".spawnChance", 50);
+		}
+		
+		if (PwnBreeding.random(spawnChance)) 
+		{
+			event.setCancelled(true);
+			if (PwnBreeding.logEnabled) 
+			{
+				PwnBreeding.logToFile("Cancelled spawn of "+mob+" in "+biome+" in world: "+world+". Spawn chance: "+spawnChance);
+			}
+		}
 		
 	}
 	
-
 }
