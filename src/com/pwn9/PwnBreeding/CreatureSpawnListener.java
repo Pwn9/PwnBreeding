@@ -1,9 +1,7 @@
 package com.pwn9.PwnBreeding;
 
 import org.bukkit.World;
-
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 
@@ -18,7 +16,7 @@ public class CreatureSpawnListener implements Listener
 	    this.plugin = plugin;
 	}
 
-	// List for the ItemSpawnEvent and then do stuff with it
+	// Listen for the SpawnEvent and then do stuff with it
 	@EventHandler(ignoreCancelled = true)
 	public void onSpawn(CreatureSpawnEvent event) 
 	{
@@ -59,8 +57,10 @@ public class CreatureSpawnListener implements Listener
 		}
 		
 		if (PwnBreeding.random(spawnChance)) 
-		{
+		{			
+			// Cancel the event and no baby is born
 			event.setCancelled(true);
+			
 			if (PwnBreeding.logEnabled) 
 			{
 				PwnBreeding.logToFile("Cancelled spawn of "+mob+" in "+biome+" in world: "+world+". Spawn chance: "+spawnChance);
