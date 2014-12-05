@@ -1,6 +1,7 @@
 package com.pwn9.PwnBreeding;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.World;
 
 import org.bukkit.entity.Chicken;
@@ -9,12 +10,12 @@ import org.bukkit.entity.Horse;
 import org.bukkit.entity.Ocelot;
 import org.bukkit.entity.Pig;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Rabbit;
 import org.bukkit.entity.Sheep;
 import org.bukkit.entity.Wolf;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-
 
 public class FeedListener implements Listener 
 {
@@ -30,46 +31,63 @@ public class FeedListener implements Listener
 	@EventHandler(ignoreCancelled = true)
     public void onAnimalClick(PlayerInteractEntityEvent e)
     {
+		// THIS EVENT FIRES TOO FAST WE NEED A TIMER
+		
+		
 		World eworld = e.getPlayer().getLocation().getWorld();
 		
 		// If plugin is not enabled in this world, return
 		if (!PwnBreeding.isEnabledIn(eworld.getName())) return; 
 
-        if(e.getRightClicked() instanceof Pig)
-        {
-            Player player = e.getPlayer(); // no need to store player earlier than needed, but if you're going to use it once, for a message, it's not needed to store it at all.
-            player.sendMessage(ChatColor.GOLD + "Sent");
-        }
-        if(e.getRightClicked() instanceof Cow)
-        {
-            Player player = e.getPlayer(); // no need to store player earlier than needed, but if you're going to use it once, for a message, it's not needed to store it at all.
-            player.sendMessage(ChatColor.GOLD + "Sent");
-        }
-        if(e.getRightClicked() instanceof Sheep)
-        {
-            Player player = e.getPlayer(); // no need to store player earlier than needed, but if you're going to use it once, for a message, it's not needed to store it at all.
-            player.sendMessage(ChatColor.GOLD + "Sent");
-        }
+        Player player = e.getPlayer(); 
+        String thisItem = player.getItemInHand().getType().toString();
+		
         if(e.getRightClicked() instanceof Chicken)
-        {
-            Player player = e.getPlayer(); // no need to store player earlier than needed, but if you're going to use it once, for a message, it's not needed to store it at all.
-            player.sendMessage(ChatColor.GOLD + "Sent");
+        {          
+        	
+        	e.setCancelled(true);
+        	
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
+            if (player.getItemInHand().getType() == Material.SEEDS) 
+            {
+                if(player.getItemInHand().getAmount() > 1) 
+                {
+                    	player.getItemInHand().setAmount(player.getItemInHand().getAmount() - 1);
+                } 
+                else 
+                {
+                    player.getItemInHand().setAmount(0);
+                }
+            }
         }
-        if(e.getRightClicked() instanceof Horse)
+        else if(e.getRightClicked() instanceof Cow)
         {
-            Player player = e.getPlayer(); // no need to store player earlier than needed, but if you're going to use it once, for a message, it's not needed to store it at all.
-            player.sendMessage(ChatColor.GOLD + "Sent");
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
         }
-        if(e.getRightClicked() instanceof Wolf)
+        else if(e.getRightClicked() instanceof Sheep)
         {
-            Player player = e.getPlayer(); // no need to store player earlier than needed, but if you're going to use it once, for a message, it's not needed to store it at all.
-            player.sendMessage(ChatColor.GOLD + "Sent");
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
         }
-        if(e.getRightClicked() instanceof Ocelot)
+        else if(e.getRightClicked() instanceof Pig)
         {
-            Player player = e.getPlayer(); // no need to store player earlier than needed, but if you're going to use it once, for a message, it's not needed to store it at all.
-            player.sendMessage(ChatColor.GOLD + "Sent");
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
         }
+        else if(e.getRightClicked() instanceof Horse)
+        {
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
+        }
+        else if(e.getRightClicked() instanceof Wolf)
+        {
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
+        }
+        else if(e.getRightClicked() instanceof Ocelot)
+        {
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
+        }
+        else if(e.getRightClicked() instanceof Rabbit)
+        {
+            player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
+        }        
     }
 	
 }

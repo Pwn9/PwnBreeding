@@ -40,6 +40,7 @@ public class PwnBreeding extends JavaPlugin
     	
     	// Init Listener
     	new CreatureSpawnListener(this);
+    	new FeedListener(this);
     	
     	// Get Data Folder
     	PwnBreeding.dataFolder = getDataFolder();
