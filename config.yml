@@ -13,14 +13,18 @@ default:
         spawnChance: 50
     HORSE:
         spawnChance: 50
+    MUSHROOM_COW:
+        spawnChance: 50
     OCELOT:
         spawnChance: 50
     PIG:
         spawnChance: 50
+    RABBIT:
+    	spawnChance: 50
     SHEEP:
         spawnChance: 50
     WOLF:
-        spawnChance: 50
+        spawnChance: 50        
         
 # Customized world settings, just add world name for the specific world. 
 # Any enabled_worlds that are NOT in this section will use the default settings. 
@@ -31,31 +35,87 @@ example_world:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
             spawnChance: 100
+        SUNFLOWER_PLAINS:
+        	spawnChance: 100            
     COW:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
-            spawnChance: 100            
+            spawnChance: 100 
+        SUNFLOWER_PLAINS:
+        	spawnChance: 100
     HORSE:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
             spawnChance: 100
+        SUNFLOWER_PLAINS:
+        	spawnChance: 100            
+    MUSHROOM_COW:
+        spawnChance: 0  #default for this mob for this world.   
+		MUSHROOM_ISLAND:
+			spawnChance: 50 
+		MUSHROOM_SHORE:
+			spawnChance: 50 
     OCELOT:
-        spawnChance: 50  #default for this mob for this world.
-        PLAINS:
-            spawnChance: 50
+        spawnChance: 25  #default for this mob for this world.
+		JUNGLE: 
+			spawnChance: 100
+		JUNGLE_EDGE:
+			spawnChance: 100
+		JUNGLE_EDGE_MOUNTAINS:
+			spawnChance: 100
+		JUNGLE_HILLS:
+			spawnChance: 100
+		JUNGLE_MOUNTAINS:
+			spawnChance: 100           
     PIG:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
             spawnChance: 100
+        SUNFLOWER_PLAINS:
+        	spawnChance: 100
+    RABBIT:
+        spawnChance: 50  #default for this mob for this world.
+        PLAINS:
+            spawnChance: 100            
     SHEEP:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
             spawnChance: 100
+        SUNFLOWER_PLAINS:
+        	spawnChance: 100            
     WOLF:
         spawnChance: 50  #default for this mob for this world.
-        PLAINS:
-            spawnChance: 100    
+		FOREST:
+			spawnChance: 100
+		FOREST_HILLS:
+			spawnChance: 100
+		ROOFED_FOREST:
+			spawnChance: 100
+		TAIGA:
+			spawnChance: 100
+		TAIGA_HILLS: 
+			spawnChance: 100
                      
+example_world_nether:
+    CHICKEN:
+        spawnChance: 0
+    COW:
+        spawnChance: 0
+    HORSE:
+        spawnChance: 0
+    MUSHROOM_COW:
+        spawnChance: 0
+    OCELOT:
+        spawnChance: 0
+    PIG:
+        spawnChance: 0
+    RABBIT:
+    	spawnChance: 0
+    SHEEP:
+        spawnChance: 0
+    WOLF:
+        spawnChance: 0
+        
 # Enable logging (for debugging, generally leave this false unless you are having problems)
-# Note that on production servers with lots of chicken farms this log could get very big!
+# Note that on production servers with lots of farms this log could get very big!
 debug_log: false
