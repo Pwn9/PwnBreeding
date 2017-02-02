@@ -28,6 +28,7 @@ public class FeedListener implements Listener
 	}
 
 	// Listen for the Event and then do stuff with it
+	// consider using playerinteractATentityevent
 	@EventHandler(ignoreCancelled = true)
     public void onAnimalClick(PlayerInteractEntityEvent e)
     {
