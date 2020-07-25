@@ -49,7 +49,7 @@ public class FeedListener implements Listener
         	e.setCancelled(true);
         	
             player.sendMessage(ChatColor.GOLD + "Player has " + thisItem + " for a " + e.getRightClicked().getType().toString());
-            if (player.getItemInHand().getType() == Material.SEEDS) 
+            if (player.getItemInHand().getType() == Material.WHEAT_SEEDS) 
             {
                 if(player.getItemInHand().getAmount() > 1) 
                 {

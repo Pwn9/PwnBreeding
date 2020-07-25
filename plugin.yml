@@ -1,6 +1,7 @@
 main: com.pwn9.PwnBreeding.PwnBreeding
 name: PwnBreeding
-version: 0.2
+version: 0.3
 author: tremor77
 description: Control breeding rates of animals.
 website: http://pwn9.com
+api-version: 1.13

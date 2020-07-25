@@ -7,22 +7,40 @@ enabled_worlds:
 # Default settings for any world and any biome.
 # All settings will fall back to this if not specifically set in perWorld/perBiome settings
 default:
+    BEE:
+        spawnChance: 50
+    CAT:
+        spawnChance: 50        
     CHICKEN:
         spawnChance: 50
     COW:
         spawnChance: 50
+    DONKEY:
+        spawnChance: 50 
+    FOX:
+        spawnChance: 50 
+    HOGLIN:
+        spawnChance: 50 
     HORSE:
         spawnChance: 50
+    LLAMA:
+        spawnChance: 50 
     MUSHROOM_COW:
         spawnChance: 50
     OCELOT:
         spawnChance: 50
+    PANDA:
+        spawnChance: 50 
     PIG:
         spawnChance: 50
     RABBIT:
         spawnChance: 50
     SHEEP:
         spawnChance: 50
+    STRIDER:
+        spawnChance: 50 
+    TURTLE:
+        spawnChance: 50         
     WOLF:
         spawnChance: 50
 
@@ -31,6 +49,14 @@ default:
 # Any worlds added here that are NOT in enabled worlds will still be disabled.
 
 example_world:
+    BEE:
+        spawnChance: 50  #default for this mob for this world.
+        PLAINS:
+            spawnChance: 100
+        SUNFLOWER_PLAINS:
+            spawnChance: 100
+    CAT:
+        spawnChance: 50  #default for this mob for this world.         
     CHICKEN:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
@@ -43,12 +69,24 @@ example_world:
             spawnChance: 100 
         SUNFLOWER_PLAINS:
             spawnChance: 100
+    DONKEY:
+        spawnChance: 50  #default for this mob for this world.
+        PLAINS:
+            spawnChance: 100 
+        SUNFLOWER_PLAINS:
+            spawnChance: 100
+    FOX:
+        spawnChance: 50 
+    HOGLIN:
+        spawnChance: 0 
     HORSE:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
             spawnChance: 100
         SUNFLOWER_PLAINS:
             spawnChance: 100
+    LLAMA:
+        spawnChance: 50 
     MUSHROOM_COW:
         spawnChance: 0  #default for this mob for this world.   
         MUSHROOM_ISLAND:
@@ -67,6 +105,8 @@ example_world:
             spawnChance: 100
         JUNGLE_MOUNTAINS:
             spawnChance: 100
+    PANDA:
+        spawnChance: 50 
     PIG:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
@@ -83,6 +123,10 @@ example_world:
             spawnChance: 100
         SUNFLOWER_PLAINS:
             spawnChance: 100
+    STRIDER:
+        spawnChance: 0 
+    TURTLE:
+        spawnChance: 50  #default for this mob for this world.
     WOLF:
         spawnChance: 50  #default for this mob for this world.
         FOREST:
@@ -97,22 +141,40 @@ example_world:
             spawnChance: 100
 
 example_world_nether:
+    BEE:
+        spawnChance: 0
+    CAT:
+        spawnChance: 0        
     CHICKEN:
         spawnChance: 0
     COW:
         spawnChance: 0
+    DONKEY:
+        spawnChance: 0 
+    FOX:
+        spawnChance: 0 
+    HOGLIN:
+        spawnChance: 50 
     HORSE:
         spawnChance: 0
+    LLAMA:
+        spawnChance: 0 
     MUSHROOM_COW:
         spawnChance: 0
     OCELOT:
         spawnChance: 0
+    PANDA:
+        spawnChance: 0 
     PIG:
         spawnChance: 0
     RABBIT:
         spawnChance: 0
     SHEEP:
         spawnChance: 0
+    STRIDER:
+        spawnChance: 50 
+    TURTLE:
+        spawnChance: 0         
     WOLF:
         spawnChance: 0
 

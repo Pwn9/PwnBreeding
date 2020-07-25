@@ -52,16 +52,8 @@ public class PwnBreeding extends JavaPlugin
     	PwnBreeding.pdfFile = this.getDescription(); //Gets plugin.yml
     	 		
 		// Start Metrics
-		try 
-		{
-		    MetricsLite metricslite = new MetricsLite(this);
-		    metricslite.start();
-		} 
-		catch (IOException e) 
-		{
-		    // Failed to submit the stats :-(
-		}  
-		
+		MetricsLite metricslite = new MetricsLite(this);
+
 		if (PwnBreeding.logEnabled)
 		{
 			PwnBreeding.logToFile(PwnBreeding.pdfFile.getName() + " version " + PwnBreeding.pdfFile.getVersion() + " [enabled]");

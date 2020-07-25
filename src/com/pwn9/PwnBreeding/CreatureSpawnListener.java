@@ -34,7 +34,7 @@ public class CreatureSpawnListener implements Listener
 		String world = eworld.getName();
 		
 		// Getting the biome
-		String biome = event.getLocation().getWorld().getBiome(event.getLocation().getBlockX(), event.getLocation().getBlockZ()).toString();
+		String biome = event.getLocation().getBlock().getBiome().toString();
 		
 		// Getting the entity type
 		String mob = event.getEntityType().toString();
