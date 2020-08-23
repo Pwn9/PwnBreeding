@@ -76,9 +76,9 @@ example_world:
         SUNFLOWER_PLAINS:
             spawnChance: 100
     FOX:
-        spawnChance: 50 
+        spawnChance: 50  #default for this mob for this world.
     HOGLIN:
-        spawnChance: 0 
+        spawnChance: 0  #default for this mob for this world.
     HORSE:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
@@ -86,7 +86,7 @@ example_world:
         SUNFLOWER_PLAINS:
             spawnChance: 100
     LLAMA:
-        spawnChance: 50 
+        spawnChance: 50  #default for this mob for this world.
     MUSHROOM_COW:
         spawnChance: 0  #default for this mob for this world.   
         MUSHROOM_ISLAND:
@@ -106,7 +106,7 @@ example_world:
         JUNGLE_MOUNTAINS:
             spawnChance: 100
     PANDA:
-        spawnChance: 50 
+        spawnChance: 50  #default for this mob for this world.
     PIG:
         spawnChance: 50  #default for this mob for this world.
         PLAINS:
@@ -124,7 +124,7 @@ example_world:
         SUNFLOWER_PLAINS:
             spawnChance: 100
     STRIDER:
-        spawnChance: 0 
+        spawnChance: 0  #default for this mob for this world.
     TURTLE:
         spawnChance: 50  #default for this mob for this world.
     WOLF:
