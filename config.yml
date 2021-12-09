@@ -1,8 +1,8 @@
 # Which worlds should this be enabled in?
 # Unlisted worlds will allow normal spawning.
 enabled_worlds:
-    example_world
-    example_world_nether
+    - example_world
+    - example_world_nether
 
 # Default settings for any world and any biome.
 # All settings will fall back to this if not specifically set in perWorld/perBiome settings
